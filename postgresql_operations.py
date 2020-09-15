@@ -49,4 +49,4 @@ def update(id, name, marks):
     conn.close()
 
 
-# update(4, "qumru", 24.0)
+# update(4, "nemo", 24.0)
