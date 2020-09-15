@@ -9,10 +9,10 @@ def createtable():
     conn.close()
 
 
-def insert(roll, name, mark):
+def insert(id, name, mark):
     conn = psycopg2.connect("dbname='datalearn' user='postgres' password='postgres' port='5432' host='localhost'")
     cur = conn.cursor()
-    cur.execute("INSERT INTO data VALUES(%s,%s,%s)", (roll, name, mark))
+    cur.execute("INSERT INTO data VALUES(%s,%s,%s)", (id, name, mark))
     conn.commit()
     conn.close()
 
@@ -47,6 +47,5 @@ def update(id, name, marks):
     cur.execute("UPDATE data SET name=%s, marks=%s WHERE id=%s", (name, marks, id))
     conn.commit()
     conn.close()
-
 
 # update(4, "nemo", 24.0)
